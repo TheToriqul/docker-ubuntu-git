@@ -1,0 +1,20 @@
+# Git files
+.git
+.gitignore
+
+# Documentation
+*.md
+LICENSE
+
+# Development files
+.env
+.env.*
+*.log
+
+# Docker files
+docker-compose.yml
+Dockerfile.*
+
+# Editor directories
+.idea
+.vscode
