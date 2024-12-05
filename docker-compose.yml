@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  git:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ubuntu-git:latest
+    container_name: git-container
+    volumes:
+      - ./:/git
+    environment:
+      - GIT_AUTHOR_NAME=${GIT_AUTHOR_NAME:-Default User}
+      - GIT_AUTHOR_EMAIL=${GIT_AUTHOR_EMAIL:-default@example.com}
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 512M
+        reservations:
+          cpus: '0.5'
+          memory: 256M
